@@ -1,0 +1,27 @@
+function totalFacturado(listaClientes,mes,anio){
+	let montoTotal=0
+
+	if (mes<9){
+		aBuscar = '0' + mes + '/' + anio
+	} else {
+	
+	aBuscar = mes + '/' + anio
+	
+	}
+	console.log(aBuscar)
+
+	for (i=0;i<listaClientes.length;i++){
+    cliente=listaClientes[i]
+    
+    for (j=0;j<cliente.pagos.length;j++){
+    	if(cliente.pagos[j].fecha.includes(aBuscar)){
+    		console.log(cliente.pagos[j].fecha)
+    		console.log(cliente.pagos[j].monto)
+    		montoTotal=montoTotal+cliente.pagos[j].monto
+    	}
+    }
+	}
+console.log('El total facturado del mes ' + mes + ' del '+ anio+ ' es $' + montoTotal)
+}
+
+totalFacturado(listaDeClientes,4,2020)
