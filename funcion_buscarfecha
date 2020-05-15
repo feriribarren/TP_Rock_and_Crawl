@@ -1,0 +1,30 @@
+const misFechas=[
+'03/04/2020',
+'02/01/2019',
+'01/12/2020',
+'05/06/2018',
+'12/11/2019',
+'25/01/2019',
+]
+
+
+function buscarFechas(fechas, mes, anio) {
+	if (mes<9){
+		aBuscar = '0' + mes + '/' + anio
+	} else {
+	aBuscar = mes + '/' + anio
+	}
+
+	const fechasEncontradas=[]
+
+	for (i=0;i<fechas.length;i++){
+		fecha=fechas[i]
+
+		if (fecha.includes(aBuscar)) {
+			fechasEncontradas.push(fecha)	
+		}
+	}
+return fechasEncontradas
+}
+
+console.log(buscarFechas(misFechas,11,2019))
